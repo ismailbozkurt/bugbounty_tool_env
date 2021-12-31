@@ -1,0 +1,13 @@
+version: "3"
+
+
+# docker-compose run bugbounty_tool_env /bin/bash
+
+services:
+  bugbounty_tool_env:
+    stdin_open: true
+    tty: true
+    image: bugbounty_tool_env_bugbounty_tool_env:latest 
+    command: /bin/bash
+    volumes:
+      - .:/dev/shm

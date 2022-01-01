@@ -5,9 +5,10 @@ version: "3"
 
 services:
   bugbounty_tool_env:
+    build: .
     stdin_open: true
     tty: true
-    image: bugbounty_tool_env_bugbounty_tool_env:latest 
+    # image: bugbounty_tool_env_bugbounty_tool_env:latest 
     command: /bin/bash
     volumes:
       - .:/dev/shm

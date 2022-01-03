@@ -16,6 +16,8 @@ RUN apt update -qq && \
     wget -q https://golang.org/dl/go1.17.1.linux-amd64.tar.gz && tar -C /usr/local -xzf go1.17.1.linux-amd64.tar.gz && rm go1.17.1.linux-amd64.tar.gz && \
     export GOPATH=/home/root/go
 
+ENV PATH=/root/go/bin:$PATH
+
 RUN mkdir /wordlists && cd /wordlists && \
     git clone https://github.com/xm1k3/cent.git && \
     git clone https://github.com/ayoubfathi/leaky-paths.git && \
@@ -98,6 +100,7 @@ RUN mkdir /tools && cd /tools && \
     wget -q -O /tmp/unimap https://github.com/Edu4rdSHL/unimap/releases/download/0.5.1/unimap-linux && mv /tmp/unimap /usr/bin/unimap && chmod +x /usr/bin/unimap && \
     cd /tmp && git clone https://github.com/EnableSecurity/wafw00f && cd wafw00f && python3 setup.py install && cd /tools && \
     /usr/local/go/bin/go install github.com/tomnomnom/waybackurls@latest && \
+    /usr/local/go/bin/go install -v github.com/tillson/git-hound@latest && \
     pip3 install webscreenshot && \
     gem install wpscan && \
     /usr/local/go/bin/go  clean -modcache && \

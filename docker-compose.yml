@@ -11,4 +11,4 @@ services:
     # image: bugbounty_tool_env_bugbounty_tool_env:latest 
     command: /bin/bash
     volumes:
-      - .:/dev/shm
+      - /Users/acelik/BUGBOUNTY/flicker:/dev/shm
